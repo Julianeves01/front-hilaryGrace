@@ -1,6 +1,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Cores do tema Hilary Grace */
+  --warm-white: #fefefe;
+  --cream: #f8f6f4;
+  --primary-rose: #e8d5d1;
+  --accent-rose: #d4a5a0;
+  --deep-rose: #b48b8b;
+  --border-light: #e8e8e8;
+  --text-dark: #2c2c2c;
+  --text-light: #666666;
 }
 
 @media (prefers-color-scheme: dark) {
