@@ -1,22 +1,22 @@
 import Link from 'next/link'
-
+import styles from '../styles/footer.module.css'
 
 export default function Footer() {
     return (
-        <footer className="footer">
-            <div className="container">
-                <div className="footer-content">
-                    <div className="footer-section">
+        <footer className={styles.footer}>
+            <div className={styles.container}>
+                <div className={styles.footerContent}>
+                    <div className={styles.footerSection}>
                         <h3>Hilary Grace</h3>
                         <p>Elevating your everyday moments with sophisticated elegance and timeless style.</p>
-                        <div className="social-links">
+                        <div className={styles.socialLinks}>
                             <Link href="#" aria-label="Instagram">📷</Link>
                             <Link href="#" aria-label="Facebook">📘</Link>
                             <Link href="#" aria-label="Pinterest">📌</Link>
                         </div>
                     </div>
 
-                    <div className="footer-section">
+                    <div className={styles.footerSection}>
                         <h4>Quick Links</h4>
                         <ul>
                             <li><Link href="/">Home</Link></li>
@@ -26,7 +26,7 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    <div className="footer-section">
+                    <div className={styles.footerSection}>
                         <h4>Customer Care</h4>
                         <ul>
                             <li><a href="#">Size Guide</a></li>
@@ -36,19 +36,19 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    <div className="footer-section">
+                    <div className={styles.footerSection}>
                         <h4>Newsletter</h4>
                         <p>Subscribe to receive updates on new arrivals and exclusive offers.</p>
-                        <form className="newsletter-form">
+                        <form className={styles.newsletterForm}>
                             <input type="email" placeholder="Your email address" />
-                            <button type="submit" className="btn-secondary">Subscribe</button>
+                            <button type="submit" className={styles.btnSecondary}>Subscribe</button>
                         </form>
                     </div>
                 </div>
 
-                <div className="footer-bottom">
-                    <p>&copy; 2025 La Moré Boutique. All rights reserved.</p>
-                    <div className="footer-links">
+                <div className={styles.footerBottom}>
+                    <p>&copy; 2025 Hilary Grace. All rights reserved.</p>
+                    <div className={styles.footerLinks}>
                         <a href="#">Privacy Policy</a>
                         <a href="#">Terms of Service</a>
                     </div>
