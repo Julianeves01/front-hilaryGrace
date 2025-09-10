@@ -94,8 +94,6 @@
     transition: 0.3s;
 }
 
-
-/* Hero Styles */
 .hero {
     padding: 4rem 0;
     background: linear-gradient(135deg, var(--cream) 0%, var(--primary-rose) 100%);
@@ -104,14 +102,12 @@
     align-items: center;
 }
 
-
 .hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
 }
-
 
 .hero-text h1 {
     font-size: 3.5rem;
@@ -120,14 +116,12 @@
     line-height: 1.2;
 }
 
-
 .hero-text p {
     font-size: 1.2rem;
     color: var(--text-light);
     margin-bottom: 2rem;
     font-style: italic;
 }
-
 
 .hero-image img {
     width: 100%;
@@ -136,8 +130,6 @@
     box-shadow: 0 20px 40px rgba(180, 139, 139, 0.2);
 }
 
-
-/* Product Card Styles */
 .product-card {
     background: white;
     border-radius: 15px;
@@ -147,18 +139,15 @@
     cursor: pointer;
 }
 
-
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(180, 139, 139, 0.2);
 }
 
-
 .product-image {
     position: relative;
     overflow: hidden;
 }
-
 
 .product-image img {
     width: 100%;
@@ -167,11 +156,9 @@
     transition: transform 0.3s ease;
 }
 
-
 .product-card:hover .product-image img {
     transform: scale(1.05);
 }
-
 
 .product-overlay {
     position: absolute;
@@ -187,11 +174,9 @@
     transition: opacity 0.3s ease;
 }
 
-
 .product-card:hover .product-overlay {
     opacity: 1;
 }
-
 
 .product-overlay span {
     color: white;
@@ -200,18 +185,15 @@
     letter-spacing: 1px;
 }
 
-
 .product-info {
     padding: 1.5rem;
 }
-
 
 .product-info h3 {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
     color: var(--text-dark);
 }
-
 
 .product-category {
     color: var(--text-light);
@@ -221,22 +203,18 @@
     letter-spacing: 1px;
 }
 
-
 .product-price {
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--deep-rose);
 }
 
-
-/* Grid Layouts */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-bottom: 3rem;
 }
-
 
 .collection-grid {
     display: grid;
@@ -245,11 +223,9 @@
     margin-bottom: 3rem;
 }
 
-
 .collection-item {
     text-align: center;
 }
-
 
 .collection-item img {
     width: 100%;
@@ -258,7 +234,6 @@
     border-radius: 10px;
     margin-bottom: 1rem;
 }
-
 
 .collection-item h3 {
     font-size: 1.3rem;
