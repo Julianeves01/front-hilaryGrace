@@ -65,29 +65,8 @@
     color: var(--deep-rose);
 }
 
-.socialLinks {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
 
-.socialLinks a {
-    font-size: 1.5rem;
-    padding: 0.5rem;
-    border-radius: 50%;
-    background: var(--cream);
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 45px;
-}
 
-.socialLinks a:hover {
-    background: var(--deep-rose);
-    transform: translateY(-2px);
-}
 
 .newsletterForm {
     margin-top: 1rem;
@@ -187,9 +166,6 @@
         justify-content: center;
     }
     
-    .socialLinks {
-        justify-content: center;
-    }
 }
 
 @media (max-width: 480px) {
@@ -201,9 +177,4 @@
         font-size: 1.3rem;
     }
     
-    .socialLinks a {
-        width: 40px;
-        height: 40px;
-        font-size: 1.3rem;
-    }
 }

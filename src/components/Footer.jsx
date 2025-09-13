@@ -8,12 +8,7 @@ export default function Footer() {
                 <div className={styles.footerContent}>
                     <div className={styles.footerSection}>
                         <h3>Hilary Grace</h3>
-                        <p>Elevating your everyday moments with sophisticated elegance and timeless style.</p>
-                        <div className={styles.socialLinks}>
-                            <Link href="#" aria-label="Instagram">📷</Link>
-                            <Link href="#" aria-label="Facebook">📘</Link>
-                            <Link href="#" aria-label="Pinterest">📌</Link>
-                        </div>
+                        <p>Elevando seus momentos cotidianos com elegância sofisticada e estilo atemporal.</p>
                     </div>
 
                     <div className={styles.footerSection}>
