@@ -1,0 +1,123 @@
+.hero {
+    width: 100%;
+    min-height: 70vh;
+    background: linear-gradient(135deg, var(--warm-white) 0%, var(--primary-rose) 100%);
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.heroContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.heroText {
+    flex: 1;
+    min-width: 300px;
+}
+
+.heroText h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+}
+
+.heroText p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 32px;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.btnPrimary {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent-rose), var(--deep-rose));
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btnPrimary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(180, 139, 139, 0.3);
+    color: white;
+}
+
+.heroImage {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.heroImage img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(212, 165, 165, 0.2);
+    border: 3px solid var(--border-light);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 60vh;
+        padding: 40px 0;
+    }
+
+    .heroContent {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .heroText h1 {
+        font-size: 2.2rem;
+    }
+
+    .heroText p {
+        font-size: 1.1rem;
+    }
+
+    .btnPrimary {
+        padding: 14px 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .heroText h1 {
+        font-size: 1.8rem;
+    }
+
+    .heroText p {
+        font-size: 1rem;
+    }
+}
