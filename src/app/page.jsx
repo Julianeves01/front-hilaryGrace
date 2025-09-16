@@ -1,25 +1,29 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 import Hero from '../components/Hero'
 import styles from './page.module.css'
 
+export default function Home() {
+  const [joias, setJoias] = useState([])
+  const [loading, setLoading] = useState(true)
 
-async function getProducts() {
-  try {
-    const res = await fetch('http://localhost:3000/api/jewels', {
-      cache: 'no-store'
-    })
-    if (!res.ok) {
-      throw new Error(`Failed to fetch products: ${res.status} ${res.statusText}`)
-    }
-    return res.json()
-  } catch (error) {
-    console.error('Error fetching products:', error)
-    return []
-  }
-}
-
-
-export default async function Home() {
-  const products = await getProducts()
+  useEffect(() => {
+    const fetchJoias = async () => {
+      try {
+        const res = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/api/jewels`
+        );
+        setJoias(res.data);
+      } catch (error) {
+        console.error("Erro ao buscar joias:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchJoias();
+  }, []);
 
 
   return (
@@ -53,13 +57,17 @@ export default async function Home() {
         <div className="container">
           <h2 className="section-title">Featured Products</h2>
           <div className={styles.productsGrid}>
-            {products.slice(0, 8).map((product) => (
-              <div key={product.id} className={styles.productCard}>
-                <img src={product.image} alt={product.name} />
-                <h4>{product.name}</h4>
-                <p className={styles.price}>R$ {product.price}</p>
-              </div>
-            ))}
+            {loading ? (
+              <p>Carregando joias...</p>
+            ) : (
+              joias.slice(0, 8).map((joia) => (
+                <div key={joia.id} className={styles.productCard}>
+                  <img src={joia.imagem_url || '/image/default-product.jpg'} alt={joia.nome} />
+                  <h4>{joia.nome}</h4>
+                  <p className={styles.price}>R$ {joia.preco}</p>
+                </div>
+              ))
+            )}
           </div>
           <div className={styles.ctaSection}>
             <a href="/listagem" className="btn-primary">View All Products</a>
