@@ -1,0 +1,154 @@
+.listagemPage {
+    min-height: 100vh;
+    background-color: var(--warm-white);
+    padding: 80px 0 60px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.sectionTitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.sectionTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-rose), var(--deep-rose));
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.filters button {
+    background: transparent;
+    color: var(--text-light);
+    border: 2px solid var(--accent-rose);
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.filters button:hover {
+    background: var(--accent-rose);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.filters button.active {
+    background: linear-gradient(135deg, var(--accent-rose), var(--deep-rose));
+    color: white;
+    border-color: var(--deep-rose);
+}
+
+.productsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+.loading::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--accent-rose);
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    margin-left: 10px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .listagemPage {
+        padding: 60px 0 40px;
+    }
+
+    .sectionTitle {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .filters {
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    .filters button {
+        padding: 10px 18px;
+        font-size: 0.8rem;
+    }
+
+    .productsGrid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .sectionTitle {
+        font-size: 1.7rem;
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filters button {
+        width: 200px;
+    }
+
+    .productsGrid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
