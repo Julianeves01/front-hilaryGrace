@@ -21,7 +21,7 @@ export default function Listagem() {
             const data = await response.json()
             setProducts(data)
         } catch (error) {
-            console.error('Error fetching products:', error)
+            console.error('Erro ao buscar produtos:', error)
         } finally {
             setLoading(false)
         }
@@ -34,39 +34,45 @@ export default function Listagem() {
 
 
     if (loading) {
-        return <div className="loading">Loading...</div>
+        return <div className="loading">Carregando...</div>
     }
 
 
     return (
         <div className="listagem-page">
             <div className="container">
-                <h1 className="section-title">Our Collection</h1>
+                <h1 className="section-title">Nossa Coleção</h1>
 
                 <div className="filters">
                     <button
                         className={filter === 'all' ? 'active' : ''}
                         onClick={() => setFilter('all')}
                     >
-                        All
+                        Todos
                     </button>
                     <button
-                        className={filter === 'dresses' ? 'active' : ''}
-                        onClick={() => setFilter('dresses')}
+                        className={filter === 'necklace' ? 'active' : ''}
+                        onClick={() => setFilter('necklace')}
                     >
-                        Dresses
+                        Colares
                     </button>
                     <button
-                        className={filter === 'tops' ? 'active' : ''}
-                        onClick={() => setFilter('tops')}
+                        className={filter === 'earring' ? 'active' : ''}
+                        onClick={() => setFilter('earring')}
                     >
-                        Tops
+                        Brincos
                     </button>
                     <button
-                        className={filter === 'accessories' ? 'active' : ''}
-                        onClick={() => setFilter('accessories')}
+                        className={filter === 'ring' ? 'active' : ''}
+                        onClick={() => setFilter('ring')}
                     >
-                        Accessories
+                        Anéis
+                    </button>
+                    <button
+                        className={filter === 'bracelet' ? 'active' : ''}
+                        onClick={() => setFilter('bracelet')}
+                    >
+                        Pulseiras
                     </button>
                 </div>
 
