@@ -11,7 +11,7 @@ export default function Hero() {
                         <a href="/listagem" className={styles.btnPrimary}>Discover Collection</a>
                     </div>
                     <div className={styles.heroImage}>
-                        <img src="/icons/hero-model.jpg" alt="Beautiful Collection" />
+                        <img src="/image/logo.png" alt="Beautiful Collection" />
                     </div>
                 </div>
             </div>

@@ -85,9 +85,6 @@ export default function Home() {
               <p>Discover pieces that speak to your heart and elevate your everyday moments into something extraordinary.</p>
               <a href="/sobre" className="btn-secondary">Learn More</a>
             </div>
-            <div className={styles.aboutImage}>
-              <img src="/image/about-preview.jpg" alt="About Us" />
-            </div>
           </div>
         </div>
       </section>

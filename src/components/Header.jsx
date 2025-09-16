@@ -15,6 +15,7 @@ export default function Header() {
                 <nav className={isMenuOpen ? styles.open : ""}>
                     <Link href="/">Home</Link>
                     <Link href="/listagem">Collection</Link>
+                    <Link href="/criar">Criar</Link>
                     <Link href="/sobre">About</Link>
                     <Link href="/contato">Contact</Link>
                 </nav>

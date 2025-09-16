@@ -6,6 +6,9 @@ import Footer from '../components/Footer'
 export const metadata = {
   title: 'Hilary Grace Joias',
   description: 'Discover our exclusive collection of feminine elegance',
+  icons: {
+    icon: '/icons/logo.png'
+  }
 }
 
 

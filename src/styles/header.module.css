@@ -73,6 +73,23 @@
     width: 100%;
 }
 
+.adminLink {
+    background: linear-gradient(135deg, #d4a574, #b8935a) !important;
+    color: white !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 6px !important;
+    font-size: 0.85rem !important;
+}
+
+.adminLink:hover {
+    background: linear-gradient(135deg, #b8935a, #a68149) !important;
+    color: white !important;
+}
+
+.adminLink::after {
+    display: none !important;
+}
+
 .open {
     display: flex !important;
 }

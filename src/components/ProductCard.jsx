@@ -6,15 +6,14 @@ export default function ProductCard({ product }) {
         <div className={styles.productCard}>
             <Link href={`/detalhes/${product.id}`}>
                 <div className={styles.productImage}>
-                    <img src={product.image} alt={product.name} />
+                    <img src={product.imagem_url || '/icons/placeholder.jpg'} alt={product.nome} />
                     <div className={styles.productOverlay}>
                         <span>View Details</span>
                     </div>
                 </div>
                 <div className={styles.productInfo}>
-                    <h3>{product.name}</h3>
-                    <p className={styles.productCategory}>{product.category}</p>
-                    <p className={styles.productPrice}>R$ {product.price}</p>
+                    <h3>{product.nome}</h3>
+                    <p className={styles.productPrice}>R$ {parseFloat(product.preco).toFixed(2)}</p>
                 </div>
             </Link>
         </div>
