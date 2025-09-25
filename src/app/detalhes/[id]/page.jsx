@@ -19,19 +19,6 @@ export default function DetalhesJoia() {
                 setJoia(res.data);
             } catch (error) {
                 console.error("Erro ao buscar joia:", error);
-            }
-        };
-
-        const fetchPersonalizacoes = async () => {
-            try {
-                const res = await axios.get(
-                    `${process.env.NEXT_PUBLIC_API_URL}/api/customizations`
-                );
-                // Filtrar personalizações para esta joia
-                const personalizacoesDaJoia = res.data.filter(p => p.joia_id === parseInt(params.id));
-                setPersonalizacoes(personalizacoesDaJoia);
-            } catch (error) {
-                console.error("Erro ao buscar personalizações:", error);
             } finally {
                 setLoading(false);
             }
@@ -39,7 +26,8 @@ export default function DetalhesJoia() {
 
         if (params.id) {
             fetchJoia();
-            fetchPersonalizacoes();
+            // Removendo a busca por personalizações pois o endpoint não existe no backend
+            // setPersonalizacoes([]); // Já inicializado como array vazio
         }
     }, [params.id]);
 
