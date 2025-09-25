@@ -13,7 +13,7 @@ export default function Home() {
     const fetchJoias = async () => {
       try {
         const res = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/api/jewels`
+          `${process.env.NEXT_PUBLIC_API_URL}/api/joias`
         );
         setJoias(res.data);
       } catch (error) {

@@ -60,7 +60,7 @@ export default function Admin() {
 
             // Enviar para o backend
             const response = await axios.post(
-                `${process.env.NEXT_PUBLIC_API_URL}/api/jewels`,
+                `${process.env.NEXT_PUBLIC_API_URL}/api/joias`,
                 joiaData
             )
 

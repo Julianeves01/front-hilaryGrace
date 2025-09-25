@@ -14,7 +14,7 @@ export default function Listagem() {
 
     const fetchProducts = async () => {
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/jewels`)
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/joias`)
             const data = await response.json()
             setProducts(data)
         } catch (error) {

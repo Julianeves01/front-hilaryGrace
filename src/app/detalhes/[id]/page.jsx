@@ -14,7 +14,7 @@ export default function DetalhesJoia() {
         const fetchJoia = async () => {
             try {
                 const res = await axios.get(
-                    `${process.env.NEXT_PUBLIC_API_URL}/api/jewels/${params.id}`
+                    `${process.env.NEXT_PUBLIC_API_URL}/api/joias/${params.id}`
                 );
                 setJoia(res.data);
             } catch (error) {
