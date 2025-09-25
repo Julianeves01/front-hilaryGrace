@@ -14,10 +14,12 @@ export default function Header() {
                 </Link>
                 <nav className={isMenuOpen ? styles.open : ""}>
                     <Link href="/">Home</Link>
-                    <Link href="/listagem">Collection</Link>
+                    <Link href="/listagem">Coleçâo</Link>
+                    <Link href="/vendas">Vendas</Link>
+                    <Link href="/usuarias">Vendedoras</Link>
                     <Link href="/criar">Criar</Link>
-                    <Link href="/sobre">About</Link>
-                    <Link href="/contato">Contact</Link>
+                    <Link href="/sobre">Sobre</Link>
+                    <Link href="/contato">Contato</Link>
                 </nav>
                 <button
                     className={styles.menuToggle}
