@@ -8,12 +8,23 @@ export default function ProductCard({ product }) {
                 <div className={styles.productImage}>
                     <img src={product.imagem_url || '/icons/placeholder.jpg'} alt={product.nome} />
                     <div className={styles.productOverlay}>
-                        <span>View Details</span>
+                        <span>Ver Detalhes</span>
                     </div>
+                    {product.status === 'vendida' && (
+                        <div className={styles.soldBadge}>
+                            <span>VENDIDA</span>
+                        </div>
+                    )}
                 </div>
                 <div className={styles.productInfo}>
                     <h3>{product.nome}</h3>
                     <p className={styles.productPrice}>R$ {parseFloat(product.preco).toFixed(2)}</p>
+                    <p className={styles.productSeller}>Por: {product.vendedora}</p>
+                    <p className={styles.productStatus}>
+                        Status: <span className={product.status === 'disponivel' ? styles.available : styles.sold}>
+                            {product.status}
+                        </span>
+                    </p>
                 </div>
             </Link>
         </div>
