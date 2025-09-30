@@ -127,35 +127,37 @@ export default function Admin() {
                     />
                 </div>
 
-                <div className={styles.formGroup}>
-                    <label htmlFor="price">Preço (R$) *</label>
-                    <input
-                        type="number"
-                        id="price"
-                        name="price"
-                        value={formData.price}
-                        onChange={handleChange}
-                        placeholder="299.99"
-                        step="0.01"
-                        min="0"
-                        required
-                    />
+                <div className={styles.formRow}>
+                    <div className={styles.formGroup}>
+                        <label htmlFor="price">Preço (R$) *</label>
+                        <input
+                            type="number"
+                            id="price"
+                            name="price"
+                            value={formData.price}
+                            onChange={handleChange}
+                            placeholder="299.99"
+                            step="0.01"
+                            min="0"
+                            required
+                        />
+                    </div>
+
+                    <div className={styles.formGroup}>
+                        <label htmlFor="image">URL da Imagem *</label>
+                        <input
+                            type="url"
+                            id="image"
+                            name="image"
+                            value={formData.image}
+                            onChange={handleChange}
+                            placeholder="https://exemplo.com/imagem.jpg"
+                            required
+                        />
+                    </div>
                 </div>
 
-                <div className={styles.formGroup}>
-                    <label htmlFor="image">URL da Imagem *</label>
-                    <input
-                        type="url"
-                        id="image"
-                        name="image"
-                        value={formData.image}
-                        onChange={handleChange}
-                        placeholder="https://exemplo.com/imagem.jpg"
-                        required
-                    />
-                </div>
-
-                <div className={styles.formGroup}>
+                <div className={`${styles.formGroup} ${styles.full}`}>
                     <label htmlFor="description">Descrição</label>
                     <textarea
                         id="description"

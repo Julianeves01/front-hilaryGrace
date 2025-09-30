@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import styles from '../../styles/usuarias.module.css'
+import styles from '../../styles/listagem.module.css'
 
 export default function Usuarias() {
     const [usuarias, setUsuarias] = useState([])
