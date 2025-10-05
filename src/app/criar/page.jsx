@@ -2,34 +2,38 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import styles from '../../styles/admin.module.css'
+
 export default function Admin() {
     const [formData, setFormData] = useState({
         name: '',
         price: '',
         image: '',
         description: '',
-        usuaria_id: '1' // Por simplicidade, usando usuária padrão
+        usuaria_id: ''
     })
     const [usuarias, setUsuarias] = useState([])
     const [message, setMessage] = useState('')
     const [isSubmitting, setIsSubmitting] = useState(false)
+    
     useEffect(() => {
         fetchUsuarias()
     }, [])
+    
     const fetchUsuarias = async () => {
         try {
-            const response = await
-                axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/usuarias`)
+            const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/usuarias`)
             setUsuarias(response.data)
             if (response.data.length > 0) {
                 setFormData(prev => ({
-                    ...prev, usuaria_id:
-                        response.data[0].id.toString()
+                    ...prev, 
+                    usuaria_id: response.data[0].id.toString()
                 }))
+            } else {
+                setMessage('⚠️ Nenhuma usuária encontrada. Cadastre uma usuária primeiro.')
             }
         } catch (error) {
-
             console.error('Erro ao buscar usuárias:', error)
+            setMessage('⚠️ Erro ao carregar usuárias. Verifique a conexão com o servidor.')
         }
     }
     const handleChange = (e) => {
@@ -39,23 +43,36 @@ export default function Admin() {
             [name]: value
         }))
     }
+    
     const handleSubmit = async (e) => {
         e.preventDefault()
         setIsSubmitting(true)
         setMessage('')
+        
         try {
             // Validação mais robusta
-            if (!formData.name.trim() || !formData.price ||
-                !formData.usuaria_id) {
-                setMessage('Por favor, preencha todos os campos obrigatórios.')
+            if (!formData.name.trim()) {
+                setMessage('❌ Por favor, insira o nome da joia.')
                 return
             }
+            
+            if (!formData.price) {
+                setMessage('❌ Por favor, insira o preço da joia.')
+                return
+            }
+            
+            if (!formData.usuaria_id) {
+                setMessage('❌ Por favor, selecione uma vendedora.')
+                return
+            }
+            
             // Validar preço
             const priceNum = parseFloat(formData.price)
             if (isNaN(priceNum) || priceNum <= 0) {
-                setMessage('Por favor, insira um preço válido maior que zero.')
+                setMessage('❌ Por favor, insira um preço válido maior que zero.')
                 return
             }
+            
             // Preparar dados para o backend (formato correto da API)
             const joiaData = {
                 nome: formData.name.trim(),
@@ -63,44 +80,45 @@ export default function Admin() {
                 descricao: formData.description.trim() || '',
                 usuaria_id: parseInt(formData.usuaria_id)
             }
+            
             console.log('Enviando dados:', joiaData)
-
             console.log('URL da API:', process.env.NEXT_PUBLIC_API_URL)
+            
             // Enviar para o backend
             const response = await axios.post(
                 `${process.env.NEXT_PUBLIC_API_URL}/api/joias`,
                 joiaData
             )
+            
             console.log('Resposta do servidor:', response.data)
             setMessage('✅ Joia criada com sucesso!')
+            
             // Limpar formulário
             setFormData({
                 name: '',
                 price: '',
                 image: '',
                 description: '',
-                usuaria_id: '1'
+                usuaria_id: usuarias.length > 0 ? usuarias[0].id.toString() : ''
             })
+            
         } catch (error) {
             console.error('Erro completo:', error)
             if (error.response) {
                 console.error('Status:', error.response.status)
-                console.error('Dados da resposta:',
-                    error.response.data)
+                console.error('Dados da resposta:', error.response.data)
                 console.error('Headers:', error.response.headers)
+                
                 if (error.response.status === 400) {
-                    const errorMsg = error.response.data?.message ||
-                        error.response.data?.error || 'Dados inválidos'
+                    const errorMsg = error.response.data?.message || error.response.data?.error || 'Dados inválidos'
                     setMessage(`❌ Erro 400: ${errorMsg}`)
                 } else if (error.response.status === 404) {
                     setMessage('❌ Erro 404: Endpoint não encontrado. Verifique se o backend está rodando.')
                 } else if (error.response.status === 500) {
                     setMessage('❌ Erro 500: Erro interno do servidor.')
                 } else {
-                    setMessage(`❌ Erro ${error.response.status}:
-${error.response.data?.message || 'Erro desconhecido'}`)
+                    setMessage(`❌ Erro ${error.response.status}: ${error.response.data?.message || 'Erro desconhecido'}`)
                 }
-
             } else if (error.request) {
                 console.error('Erro de requisição:', error.request)
                 setMessage('❌ Erro de conexão: Não foi possível conectar ao servidor. Verifique se o backend está rodando.')
@@ -114,109 +132,121 @@ ${error.response.data?.message || 'Erro desconhecido'}`)
     }
     return (
         <div className={styles.adminContainer}>
-            <h1 className={styles.title}>Adicionar Nova Joia</h1>
-            <div className={styles.apiInfo}>
-                <p><strong>API URL:</strong>
-                    {process.env.NEXT_PUBLIC_API_URL || 'Não configurada'}</p>
-            </div>
-            <form onSubmit={handleSubmit} className={styles.form}>
-                <div className={styles.formGroup}>
-                    <label htmlFor="usuaria_id">Vendedora *</label>
-                    <select
-                        id="usuaria_id"
-                        name="usuaria_id"
-                        value={formData.usuaria_id}
-                        onChange={handleChange}
-                        required
+            <div className={styles.container}>
+                <h1 className={styles.title}>Adicionar Nova Joia</h1>
+                
+                <div className={styles.apiInfo}>
+                    <p><strong>API URL:</strong> {process.env.NEXT_PUBLIC_API_URL || 'Não configurada'}</p>
+                </div>
+                
+                <form onSubmit={handleSubmit} className={styles.form}>
+                    <div className={styles.formRow}>
+                        <div className={styles.formGroup}>
+                            <label htmlFor="usuaria_id">Vendedora *</label>
+                            <select
+                                id="usuaria_id"
+                                name="usuaria_id"
+                                value={formData.usuaria_id}
+                                onChange={handleChange}
+                                required
+                                disabled={usuarias.length === 0}
+                            >
+                                <option value="">
+                                    {usuarias.length === 0 ? 'Carregando usuárias...' : 'Selecione uma vendedora'}
+                                </option>
+                                {usuarias.map((usuaria) => (
+                                    <option key={usuaria.id} value={usuaria.id}>
+                                        {usuaria.nome} ({usuaria.email})
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                        
+                        <div className={styles.formGroup}>
+                            <label htmlFor="price">Preço (R$) *</label>
+                            <input
+                                type="number"
+                                id="price"
+                                name="price"
+                                value={formData.price}
+                                onChange={handleChange}
+                                placeholder="299.99"
+                                step="0.01"
+                                min="0"
+                                required
+                            />
+                        </div>
+                    </div>
+                    
+                    <div className={`${styles.formGroup} ${styles.full}`}>
+                        <label htmlFor="name">Nome da Joia *</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            placeholder="Ex: Colar Elegante de Ouro"
+                            required
+                        />
+                    </div>
+                    
+                    <div className={`${styles.formGroup} ${styles.full}`}>
+                        <label htmlFor="image">URL da Imagem</label>
+                        <input
+                            type="url"
+                            id="image"
+                            name="image"
+                            value={formData.image}
+                            onChange={handleChange}
+                            placeholder="https://exemplo.com/imagem.jpg"
+                        />
+                    </div>
+                    
+                    <div className={`${styles.formGroup} ${styles.full}`}>
+                        <label htmlFor="description">Descrição</label>
+                        <textarea
+                            id="description"
+                            name="description"
+                            value={formData.description}
+                            onChange={handleChange}
+                            placeholder="Descrição detalhada da joia..."
+                            rows="4"
+                        />
+                    </div>
+                    
+                    {message && (
+                        <div className={`${styles.message} ${message.includes('✅') ? styles.success : styles.error}`}>
+                            {message}
+                        </div>
+                    )}
+                    
+                    <button
+                        type="submit"
+                        className={styles.submitButton}
+                        disabled={isSubmitting}
                     >
-                        <option value="">Selecione uma
-                            vendedora</option>
-                        {usuarias.map((usuaria) => (
-                            <option key={usuaria.id}
-                                value={usuaria.id}>
-                                {usuaria.nome} ({usuaria.email})
-                            </option>
-                        ))}
-                    </select>
-                </div>
-
-                <div className={styles.formGroup}>
-                    <label htmlFor="name">Nome da Joia *</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="Ex: Colar Elegante de Ouro"
-                        required
-                    />
-                </div>
-                <div className={styles.formGroup}>
-                    <label htmlFor="price">Preço (R$) *</label>
-                    <input
-                        type="number"
-                        id="price"
-                        name="price"
-                        value={formData.price}
-                        onChange={handleChange}
-                        placeholder="299.99"
-
-                        step="0.01"
-                        min="0"
-                        required
-
-                    />
-                </div>
-                <div className={styles.formGroup}>
-                    <label htmlFor="image">URL da Imagem</label>
-                    <input
-                        type="url"
-                        id="image"
-                        name="image"
-                        value={formData.image}
-                        onChange={handleChange}
-                        placeholder="https://exemplo.com/imagem.jpg"
-                    />
-                </div>
-                <div className={styles.formGroup}>
-                    <label htmlFor="description">Descrição</label>
-                    <textarea
-
-                        id="description"
-                        name="description"
-                        value={formData.description}
-                        onChange={handleChange}
-                        placeholder="Descrição detalhada da joia..."
-                        rows="4"
-                    />
-                </div>
-                {message && (
-                    <div className={`${styles.message}
-${message.includes('✅') ? styles.success : styles.error}`}>
-                        {message}
+                        {isSubmitting ? 'Criando...' : 'Criar Joia'}
+                    </button>
+                </form>
+                
+                {formData.image && (
+                    <div className={styles.preview}>
+                        <h3>Preview da Imagem:</h3>
+                        <img 
+                            src={formData.image} 
+                            alt="Preview"
+                            onError={(e) => {
+                                e.target.style.display = 'none'
+                            }} 
+                        />
                     </div>
                 )}
-                <button
-                    type="submit"
-                    className={styles.submitButton}
-                    disabled={isSubmitting}
-                >
-                    {isSubmitting ? 'Criando...' : 'Criar Joia'}
-                </button>
-            </form>
-            {formData.image && (
-                <div className={styles.preview}>
-                    <h3>Preview da Imagem:</h3>
-                    <img src={formData.image} alt="Preview"
-                        onError={(e) => {
-                            e.target.style.display = 'none'
-                        }} />
+                
+                <div className={styles.debugInfo}>
+                    <h3>Dados do Formulário (Debug):</h3>
+                    <pre>{JSON.stringify(formData, null, 2)}</pre>
                 </div>
-            )}
-            <div className={styles.debugInfo}>
-                <h3>Dados do Formulário (Debug):</h3>
-                <pre>{JSON.stringify(formData, null, 2)}</pre>
             </div>
         </div>
     )
