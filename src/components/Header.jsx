@@ -14,7 +14,7 @@ export default function Header() {
                 </Link>
                 <nav className={isMenuOpen ? styles.open : ""}>
                     <Link href="/">Home</Link>
-                    <Link href="/listagem">Coleçâo</Link>
+                    <Link href="/listagem">Coleçao</Link>
                     <Link href="/vendas">Vendas</Link>
                     <Link href="/usuarias">Vendedoras</Link>
                     <Link href="/criar">Criar</Link>
