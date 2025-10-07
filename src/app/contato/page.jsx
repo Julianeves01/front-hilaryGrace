@@ -23,7 +23,6 @@ export default function Contato() {
         e.preventDefault()
         setIsSubmitting(true)
 
-        // Simula um pequeno delay para parecer real
         setTimeout(() => {
             setSubmitMessage('Obrigado pela sua mensagem! Entraremos em contato em breve.')
             setFormData({ name: '', email: '', subject: '', message: '' })
@@ -132,9 +131,9 @@ export default function Contato() {
                         <div className={styles.socialMedia}>
                             <h3>Siga-nos</h3>
                             <div className={styles.socialLinks}>
-                                <a href="#" className={styles.socialLink}>Instagram</a>
-                                <a href="#" className={styles.socialLink}>Linkedin</a>
-                                <a href="#" className={styles.socialLink}>GitHub</a>
+                                <a href="https://instagram.com/julia.s.neves" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>Instagram</a>
+                                <a href="#" className={styles.socialLink}>LinkedIn</a>
+                                <a href="https://github.com/Julianeves01" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>GitHub</a>
                             </div>
                         </div>
                     </div>
