@@ -12,7 +12,7 @@ export default function ProductCard({ product }) {
                     </div>
                     {product.status === 'vendida' && (
                         <div className={styles.soldBadge}>
-                            <span>VENDIDA</span>
+                            <span>VENDIDA!</span>
                         </div>
                     )}
                 </div>
