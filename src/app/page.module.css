@@ -1,6 +1,6 @@
 .home {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--accent-rose), var(--deep-rose)));
+  background: linear-gradient(135deg, var(--accent-rose), var(--deep-rose));
 }
 
 .featuredSection {

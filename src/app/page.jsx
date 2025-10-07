@@ -59,7 +59,7 @@ export default function Home() {
             ) : (
               joias.slice(0, 8).map((joia) => (
                 <div key={joia.id} className={styles.productCard}>
-                  <img src={joia.imagem_url || '/image/default-product.jpg'} alt={joia.nome} />
+                  <img src={joia.foto || '/image/default-product.jpg'} alt={joia.nome} />
                   <h4>{joia.nome}</h4>
                   <p className={styles.price}>R$ {joia.preco}</p>
                 </div>
