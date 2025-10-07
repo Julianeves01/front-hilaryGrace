@@ -6,7 +6,7 @@ export default function ProductCard({ product }) {
         <div className={styles.productCard}>
             <Link href={`/detalhes/${product.id}`}>
                 <div className={styles.productImage}>
-                    <img src={product.imagem_url || '/icons/placeholder.jpg'} alt={product.nome} />
+                    <img src={product.foto || '/icons/placeholder.jpg'} alt={product.nome} />
                     <div className={styles.productOverlay}>
                         <span>Ver Detalhes</span>
                     </div>

@@ -86,7 +86,7 @@ export default function DetalhesJoia() {
             }}>
                 <div>
                     <img
-                        src={joia.imagem_url ||
+                        src={joia.foto ||
                             '/image/default-product.jpg'}
                         alt={joia.nome}
                         style={{ width: '100%', borderRadius: '8px' }}
