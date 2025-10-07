@@ -1,6 +1,6 @@
 .home {
   min-height: 100vh;
-  background: linear-gradient(135deg, #fdfbfb 0%, #f8f5f5 100%);
+  background: linear-gradient(135deg, var(--accent-rose), var(--deep-rose)));
 }
 
 .featuredSection {
@@ -208,7 +208,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('/image/pattern.png') center/cover;
+  background: url('/image/logo.png') center/cover;
   opacity: 0.05;
   pointer-events: none;
 }
