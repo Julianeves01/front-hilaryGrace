@@ -30,32 +30,29 @@ export default function Home() {
     <div className={styles.home}>
       <Hero />
 
-      {/* Featured Collection */}
       <section className={styles.featuredSection}>
-        <div className="container">
-          <h2 className="section-title">Beautiful Collection</h2>
+        <div className={styles.container}>
+          <h2 className={styles.sectionTitle}>Coleção Especial</h2>
           <div className={styles.collectionGrid}>
             <div className={styles.collectionItem}>
-              <img src="/image/collection-1.jpg" alt="Sophisticated Elegance" />
-              <h3>Sophisticated Elegance</h3>
+              <img src="/image/sofisticado.jpg" alt="Elegância Sofisticada" />
+              <h3>Elegância Sofisticada</h3>
             </div>
             <div className={styles.collectionItem}>
-              <img src="/image/collection-2.jpg" alt="Feminine Confidence" />
-              <h3>Feminine Confidence</h3>
+              <img src="/image/feminilidade.jpg" alt="Confiança Feminina" />
+              <h3>Confiança Feminina</h3>
             </div>
             <div className={styles.collectionItem}>
-              <img src="/image/collection-3.jpg" alt="Modern Classics" />
-              <h3>Modern Classics</h3>
+              <img src="/image/moderna.jpg" alt="Clássicos Modernos" />
+              <h3>Clássicos Modernos</h3>
             </div>
           </div>
         </div>
       </section>
 
-
-      {/* Featured Products */}
       <section className={styles.productsSection}>
-        <div className="container">
-          <h2 className="section-title">Featured Products</h2>
+        <div className={styles.container}>
+          <h2 className={styles.sectionTitle}>Produtos em Destaque</h2>
           <div className={styles.productsGrid}>
             {loading ? (
               <p>Carregando joias...</p>
@@ -70,20 +67,18 @@ export default function Home() {
             )}
           </div>
           <div className={styles.ctaSection}>
-            <a href="/listagem" className="btn-primary">View All Products</a>
+            <a href="/listagem" className={styles.btnPrimary}>Ver Todos os Produtos</a>
           </div>
         </div>
       </section>
 
-
-      {/* About Preview */}
       <section className={styles.aboutPreview}>
-        <div className="container">
+        <div className={styles.container}>
           <div className={styles.aboutContent}>
             <div className={styles.aboutText}>
-              <h2>Elevate your style</h2>
-              <p>Discover pieces that speak to your heart and elevate your everyday moments into something extraordinary.</p>
-              <a href="/sobre" className="btn-secondary">Learn More</a>
+              <h2>Eleve seu estilo</h2>
+              <p>Descubra peças que tocam seu coração e transformam seus momentos cotidianos em algo extraordinário.</p>
+              <a href="/sobre" className={styles.btnSecondary}>Saiba Mais</a>
             </div>
           </div>
         </div>
