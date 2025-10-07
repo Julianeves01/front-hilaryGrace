@@ -1,0 +1,352 @@
+.sobrePage {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fdfbfb 0%, #f8f5f5 100%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.sobreHero {
+    margin-bottom: 100px;
+}
+
+.sobreContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.sobreText .sectionTitle {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin-bottom: 30px;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.lead {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #555;
+    font-weight: 300;
+}
+
+.sobreImage {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.sobreImage:hover {
+    transform: translateY(-10px);
+}
+
+.sobreImage img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+.storySection {
+    margin-bottom: 100px;
+}
+
+.storySection .sectionTitle {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.storySection .sectionTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #d4a574, #c89b68);
+    border-radius: 2px;
+}
+
+.storyContent {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.storyText {
+    background: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+.storyText p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #555;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+.storyText p:last-child {
+    margin-bottom: 0;
+}
+
+.storyStats {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.stat {
+    background: linear-gradient(135deg, #d4a574 0%, #c89b68 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(212, 165, 116, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.stat:hover {
+    transform: translateX(10px);
+}
+
+.stat h3 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.stat p {
+    font-size: 1rem;
+    font-weight: 300;
+    opacity: 0.95;
+}
+
+.valuesSection {
+    margin-bottom: 100px;
+    padding: 80px 0;
+}
+
+.valuesSection .sectionTitle {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    text-align: center;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.valuesSection .sectionTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #d4a574, #c89b68);
+    border-radius: 2px;
+}
+
+.valuesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.valueItem {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.valueItem:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border-color: #d4a574;
+}
+
+.valueIcon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.valueItem h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c2c2c;
+    margin-bottom: 15px;
+}
+
+.valueItem p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #666;
+}
+
+.teamSection {
+    margin-bottom: 80px;
+}
+
+.teamSection .sectionTitle {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    text-align: center;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.teamSection .sectionTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #d4a574, #c89b68);
+    border-radius: 2px;
+}
+
+.teamGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.teamMember {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.teamMember:hover {
+    transform: translateY(-10px);
+}
+
+.teamMember img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.teamMember h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c2c2c;
+    margin: 25px 25px 10px;
+}
+
+.teamMember p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #666;
+    margin: 0 25px 25px;
+}
+
+.teamMember p:first-of-type {
+    color: #d4a574;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+}
+
+.teamMember p:last-child {
+    font-style: italic;
+    color: #888;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 968px) {
+    .container {
+        padding: 60px 20px;
+    }
+
+    .sobreContent {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .sobreText .sectionTitle {
+        font-size: 2.5rem;
+    }
+
+    .storyContent {
+        grid-template-columns: 1fr;
+    }
+
+    .storyStats {
+        flex-direction: row;
+    }
+
+    .stat {
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .sobreText .sectionTitle {
+        font-size: 2rem;
+    }
+
+    .lead {
+        font-size: 1.1rem;
+    }
+
+    .sobreImage img {
+        height: 300px;
+    }
+
+    .storySection .sectionTitle,
+    .valuesSection .sectionTitle,
+    .teamSection .sectionTitle {
+        font-size: 2rem;
+    }
+
+    .storyText {
+        padding: 30px;
+    }
+
+    .storyStats {
+        flex-direction: column;
+    }
+
+    .stat h3 {
+        font-size: 2.5rem;
+    }
+
+    .valuesGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .teamGrid {
+        grid-template-columns: 1fr;
+    }
+}
