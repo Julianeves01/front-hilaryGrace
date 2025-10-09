@@ -12,40 +12,30 @@ export default function Footer() {
                     </div>
 
                     <div className={styles.footerSection}>
-                        <h4>Quick Links</h4>
+                        <h4>Links Rápidos</h4>
                         <ul>
-                            <li><Link href="/">Home</Link></li>
-                            <li><Link href="/listagem">Collection</Link></li>
-                            <li><Link href="/sobre">About</Link></li>
-                            <li><Link href="/contato">Contact</Link></li>
+                            <li><Link href="/">Início</Link></li>
+                            <li><Link href="/listagem">Coleção</Link></li>
+                            <li><Link href="/sobre">Sobre</Link></li>
+                            <li><Link href="/contato">Contato</Link></li>
                         </ul>
                     </div>
 
                     <div className={styles.footerSection}>
-                        <h4>Customer Care</h4>
-                        <ul>
-                            <li><a href="#">Size Guide</a></li>
-                            <li><a href="#">Shipping Info</a></li>
-                            <li><a href="#">Returns</a></li>
-                            <li><a href="#">FAQ</a></li>
-                        </ul>
-                    </div>
-
-                    <div className={styles.footerSection}>
-                        <h4>Newsletter</h4>
-                        <p>Subscribe to receive updates on new arrivals and exclusive offers.</p>
+                        <h4>Informações</h4>
+                        <p>Inscreva-se para receber atualizações sobre novos produtos e ofertas exclusivas.</p>
                         <form className={styles.newsletterForm}>
-                            <input type="email" placeholder="Your email address" />
-                            <button type="submit" className={styles.btnSecondary}>Subscribe</button>
+                            <input type="email" placeholder="Seu endereço de e-mail" />
+                            <button type="submit" className={styles.btnSecondary}>Inscrever</button>
                         </form>
                     </div>
                 </div>
 
                 <div className={styles.footerBottom}>
-                    <p>&copy; 2025 Hilary Grace. All rights reserved.</p>
+                    <p>&copy; 2025 Hilary Grace. Todos os direitos reservados.</p>
                     <div className={styles.footerLinks}>
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
+                        <a href="#">Política de Privacidade</a>
+                        <a href="#">Termos de Serviço</a>
                     </div>
                 </div>
             </div>
