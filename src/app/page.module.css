@@ -3,18 +3,18 @@
   background: linear-gradient(135deg, var(--accent-rose), var(--deep-rose));
 }
 
-.featuredSection {
-  padding: 100px 0;
-  background: white;
-}
-
-.featuredSection .container {
+.container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.featuredSection .sectionTitle {
+.featuredSection {
+  padding: 100px 0;
+  background: white;
+}
+
+.sectionTitle {
   font-size: 3rem;
   font-weight: 700;
   color: #2c2c2c;
@@ -24,7 +24,7 @@
   letter-spacing: -0.5px;
 }
 
-.featuredSection .sectionTitle::after {
+.sectionTitle::after {
   content: '';
   position: absolute;
   bottom: -15px;
@@ -89,33 +89,6 @@
   background: linear-gradient(135deg, #fdfbfb 0%, #f8f5f5 100%);
 }
 
-.productsSection .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.productsSection .sectionTitle {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #2c2c2c;
-  text-align: center;
-  margin-bottom: 60px;
-  position: relative;
-  letter-spacing: -0.5px;
-}
-
-.productsSection .sectionTitle::after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 4px;
-  background: linear-gradient(90deg, #d4a574, #c89b68);
-  border-radius: 2px;
-}
 
 .productsGrid {
   display: grid;
@@ -172,7 +145,7 @@
   margin-top: 50px;
 }
 
-.ctaSection .btnPrimary {
+.btnPrimary {
   display: inline-block;
   padding: 16px 50px;
   background: linear-gradient(135deg, #d4a574 0%, #c89b68 100%);
@@ -187,7 +160,7 @@
   text-transform: uppercase;
 }
 
-.ctaSection .btnPrimary:hover {
+.btnPrimary:hover {
   transform: translateY(-3px);
   box-shadow: 0 15px 40px rgba(212, 165, 116, 0.4);
   background: linear-gradient(135deg, #c89b68 0%, #d4a574 100%);
@@ -213,18 +186,12 @@
   pointer-events: none;
 }
 
-.aboutPreview .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  position: relative;
-  z-index: 1;
-}
-
 .aboutContent {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .aboutText h2 {
@@ -247,7 +214,7 @@
   font-weight: 300;
 }
 
-.aboutText .btnSecondary {
+.btnSecondary {
   display: inline-block;
   padding: 16px 50px;
   background: transparent;
@@ -262,7 +229,7 @@
   text-transform: uppercase;
 }
 
-.aboutText .btnSecondary:hover {
+.btnSecondary:hover {
   background: white;
   color: #c78da8;
   transform: translateY(-3px);
@@ -275,8 +242,7 @@
     padding: 80px 0;
   }
 
-  .featuredSection .sectionTitle,
-  .productsSection .sectionTitle {
+  .sectionTitle {
     font-size: 2.5rem;
   }
 
@@ -310,8 +276,7 @@
     padding: 60px 0;
   }
 
-  .featuredSection .sectionTitle,
-  .productsSection .sectionTitle {
+  .sectionTitle {
     font-size: 2rem;
     margin-bottom: 40px;
   }
@@ -354,8 +319,8 @@
     font-size: 1.1rem;
   }
 
-  .ctaSection .btnPrimary,
-  .aboutText .btnSecondary {
+  .btnPrimary,
+  .btnSecondary {
     padding: 14px 35px;
     font-size: 1rem;
   }
