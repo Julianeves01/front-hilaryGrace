@@ -6,12 +6,12 @@ export default function Hero() {
             <div className={styles.container}>
                 <div className={styles.heroContent}>
                     <div className={styles.heroText}>
-                        <h1>Beautiful Collection</h1>
-                        <p>Sophisticated elegance in confidence</p>
-                        <a href="/listagem" className={styles.btnPrimary}>Discover Collection</a>
+                        <h1>Coleção Exclusiva</h1>
+                        <p>Elegância sofisticada com confiança</p>
+                        <a href="/listagem" className={styles.btnPrimary}>Descobrir Coleção</a>
                     </div>
                     <div className={styles.heroImage}>
-                        <img src="/image/logo.png" alt="Beautiful Collection" />
+                        <img src="/image/logo.png" alt="Coleção Exclusiva" />
                     </div>
                 </div>
             </div>
